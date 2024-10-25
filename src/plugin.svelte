@@ -1,14 +1,24 @@
 <script lang="ts">
 	import * as pckg from "../package.json";
 	import "./app.css"
+	import IED from "./ied.svelte";
+	
 	
 	// Inputs
 	export let doc: XMLDocument | undefined;
-	export let editCount: number
+
+	$: ieds = doc?.querySelectorAll("IED");
+	
 </script>
 
 {#if doc}
-	<h2>Welcome to oscd-comm-doc-exp</h2>
+	<h2>these are the IEDs</h2>
+	<ul>
+	{#each ieds as ied}
+		<IED iedElement={ied} xmlDocument={doc} />
+	{/each}
+	</ul>
+
 {/if}
 
 <input type="hidden" name="package-name" value={pckg.name} />

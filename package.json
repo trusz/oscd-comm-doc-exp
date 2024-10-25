@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"preview": "vite preview --port 50713",
+		"preview": "vite preview --port 56109",
 		"build:watch": "npm run build && concurrently 'npm:_build:watch' 'npm:preview'",
 		"_build:watch": "NODE_ENV=development vite build --watch",
 		"check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
